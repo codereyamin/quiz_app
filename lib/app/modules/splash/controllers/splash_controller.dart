@@ -1,23 +1,18 @@
+import 'dart:async';
+
 import 'package:get/get.dart';
+import 'package:quiz_app/app/routes/app_pages.dart';
 
 class SplashController extends GetxController {
-  //TODO: Implement SplashController
+  gotoHomeScreen() {
+    Timer(Duration(seconds: 2), () {
+      Get.offAllNamed(Routes.HOME);
+    });
+  }
 
-  final count = 0.obs;
   @override
   void onInit() {
+    gotoHomeScreen();
     super.onInit();
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }
