@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:quiz_app/app/routes/app_pages.dart';
 import 'package:quiz_app/core/const/app_color.dart';
 import 'package:quiz_app/core/const/app_const.dart';
 import 'package:quiz_app/widgets/app_text.dart';
@@ -13,9 +14,7 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColor.primary,
       appBar: AppBar(
-        backgroundColor: AppColor.primary,
         title: const AppText(
           text: AppConst.appName,
           fontWeight: FontWeight.bold,
@@ -48,7 +47,9 @@ class HomeView extends GetView<HomeController> {
               height: 0.080,
             ),
             ElevatedButton.icon(
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed(Routes.QUIZ);
+                },
                 icon: Icon(Icons.arrow_forward_ios),
                 style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.all(20),

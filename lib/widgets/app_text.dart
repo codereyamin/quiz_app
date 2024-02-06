@@ -15,7 +15,7 @@ class AppText extends StatelessWidget {
   const AppText({
     super.key,
     required this.text,
-    this.minFontSize = 12.0,
+    this.minFontSize = 18.0,
     this.maxFontSize = 24.0,
     this.fontWeight = FontWeight.normal,
     this.color,
