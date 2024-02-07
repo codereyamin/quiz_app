@@ -18,8 +18,9 @@ class HomeView extends GetView<HomeController> {
         title: const AppText(
           text: AppConst.appName,
           fontWeight: FontWeight.bold,
-          minFontSize: 18,
-          maxFontSize: 24,
+          color: AppColor.white,
+          minFontSize: 30,
+          maxFontSize: 40,
         ),
         centerTitle: true,
       ),
@@ -32,8 +33,8 @@ class HomeView extends GetView<HomeController> {
               child: Container(
                 padding: EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  color: AppColor.white,
-                ),
+                    color: AppColor.white,
+                    borderRadius: BorderRadius.circular(5)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -53,7 +54,7 @@ class HomeView extends GetView<HomeController> {
                 icon: Icon(Icons.arrow_forward_ios),
                 style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.all(20),
-                    shape: BeveledRectangleBorder(
+                    shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10))),
                 label: AppText(text: "Start New Game")),
           ],
