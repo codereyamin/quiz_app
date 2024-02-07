@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:quiz_app/app/routes/app_pages.dart';
 import 'package:quiz_app/core/const/app_color.dart';
 import 'package:quiz_app/widgets/app_text.dart';
 
@@ -20,7 +22,9 @@ class AnswerCart extends StatelessWidget {
               activeColor: AppColor.primary,
               value: 'ok',
               groupValue: ['ok', "hi"],
-              onChanged: (value) {}),
+              onChanged: (value) {
+                Get.toNamed(Routes.CONGRATULATION);
+              }),
           Expanded(
             child: AppText(
                 color: AppColor.black,
