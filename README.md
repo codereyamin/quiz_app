@@ -1,16 +1,21 @@
-# quiz_app
+# Quiz App
 
-A new Flutter project.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+ - Clean & Modern User Interface
+ - Attend Quiz
+ - Total Score
+ - Height Score
+ - Correct Ans to green
+ - Wrong Ans to red
+ - Per quiz show 10 second
+ - Select quiz hold screen 2 second
+ - Timer count
+ - progress bar 
+ - Height score storage
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Screenshots
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="image/image1.png" width="250">   <img src="image/image2.png" width="250">   <img src="image/image3.png" width="250">    <img src="image/image4.png" width="250">   <img src="image/image5.png" width="250">  <img src="image/image6.png" width="250">   <img src="image/image7.png" width="250">   
