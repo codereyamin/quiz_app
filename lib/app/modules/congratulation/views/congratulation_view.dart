@@ -5,46 +5,45 @@ import 'package:quiz_app/widgets/app_text.dart';
 import 'package:quiz_app/widgets/gap_widget.dart';
 import '../controllers/congratulation_controller.dart';
 
-class CongratulationView extends GetView<CongratulationController> {
+class CongratulationView extends StatelessWidget {
   const CongratulationView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return GetBuilder(
-        init: CongratulationController(),
-        builder: (context) {
-          return Scaffold(
-            body: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  AppText(
-                    text: 'Congratulation',
-                    minFontSize: 30,
-                    maxFontSize: 40,
-                    color: AppColor.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  GapWidget(
-                    height: 0.05,
-                  ),
-                  AppText(
-                    text: 'You Have Earn 500 Point',
-                    color: AppColor.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  GapWidget(
-                    height: 0.05,
-                  ),
-                  ElevatedButton.icon(
-                      onPressed: () {
-                        Get.close(2);
-                      },
-                      icon: Icon(Icons.home),
-                      label: AppText(text: "Go To Home"))
-                ],
+    return GetX<CongratulationController>(builder: (controller) {
+      return Scaffold(
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const AppText(
+                text: 'Congratulation',
+                minFontSize: 30,
+                maxFontSize: 40,
+                color: AppColor.white,
+                fontWeight: FontWeight.bold,
               ),
-            ),
-          );
-        });
+              const GapWidget(
+                height: 0.05,
+              ),
+              AppText(
+                text: 'You Have Earn ${controller.totalScore.value} Point',
+                color: AppColor.white,
+                fontWeight: FontWeight.bold,
+              ),
+              const GapWidget(
+                height: 0.05,
+              ),
+              ElevatedButton.icon(
+                  onPressed: () {
+                    ///////////// home screen got ot function call
+                    controller.goToHomeScreen();
+                  },
+                  icon: const Icon(Icons.home),
+                  label: const AppText(text: "Go To Home"))
+            ],
+          ),
+        ),
+      );
+    });
   }
 }

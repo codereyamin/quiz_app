@@ -20,7 +20,13 @@ class Questions {
   String? correctAnswer;
   int? score;
 
-  Questions({question, answers, questionImageUrl, correctAnswer, score});
+  Questions({
+    question,
+    answers,
+    questionImageUrl,
+    correctAnswer,
+    score,
+  });
 
   Questions.fromJson(Map<String, dynamic> json) {
     question = json['question'];
@@ -32,17 +38,23 @@ class Questions {
   }
 }
 
+class AnswersItem {
+  String? dataKey;
+  String? value;
+  AnswersItem({this.dataKey, this.value});
+}
+
 class Answers {
-  String? a;
-  String? b;
-  String? c;
-  String? d;
+  AnswersItem? a;
+  AnswersItem? b;
+  AnswersItem? c;
+  AnswersItem? d;
 
   Answers({a, b, c, d});
   Answers.fromJson(Map<String, dynamic> json) {
-    a = json['A'];
-    b = json['B'];
-    c = json['C'];
-    d = json['D'];
+    a = AnswersItem(dataKey: 'A', value: json['A']);
+    b = AnswersItem(dataKey: 'B', value: json['B']);
+    c = AnswersItem(dataKey: 'C', value: json['C']);
+    d = AnswersItem(dataKey: 'D', value: json['D']);
   }
 }

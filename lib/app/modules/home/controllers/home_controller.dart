@@ -7,27 +7,16 @@ import 'package:quiz_app/widgets/app_text.dart';
 import 'package:quiz_app/widgets/gap_widget.dart';
 
 class HomeController extends GetxController {
-  var hasInternet = false.obs;
   RxInt heightScore = RxInt(0);
 
   fetchLocalData() async {
     heightScore.value = await LocalData().getHeightScore();
   }
 
-  internetListener() {
-    Connectivity().onConnectivityChanged.listen(
-      (ConnectivityResult result) {
-        if (result == ConnectivityResult.none) {
-          hasInternet.value = false;
-        } else {
-          hasInternet.value = true;
-        }
-      },
-    );
-  }
-
-  newQuiz() {
-    if (hasInternet.value) {
+  newQuiz() async {
+    var connectivityResult = await Connectivity().checkConnectivity();
+    if (connectivityResult == ConnectivityResult.mobile ||
+        connectivityResult == ConnectivityResult.wifi) {
       Get.toNamed(Routes.QUIZ);
     } else {
       Get.dialog(Dialog(
@@ -66,8 +55,6 @@ class HomeController extends GetxController {
   @override
   void onInit() {
     fetchLocalData();
-    internetListener();
-
     super.onInit();
   }
 }

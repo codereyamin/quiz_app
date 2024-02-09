@@ -7,8 +7,10 @@ class ProgressBar extends StatelessWidget {
   const ProgressBar({
     super.key,
     required this.progress,
+    required this.timeCount,
   });
   final double progress;
+  final double timeCount;
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +31,7 @@ class ProgressBar extends StatelessWidget {
             AnimatedContainer(
               duration: const Duration(seconds: 1),
               height: 15,
-              width: (((Get.width / 10) * progress) - 120).isNegative
-                  ? 0
-                  : (((Get.width / 10) * progress) - 120),
+              width: ((Get.width - 120) / 10 * progress),
               decoration: BoxDecoration(
                 color: AppColor.progress,
                 borderRadius: BorderRadius.circular(10),
@@ -51,7 +51,7 @@ class ProgressBar extends StatelessWidget {
           child: AppText(
             minFontSize: 24,
             maxFontSize: 30,
-            text: "$progress",
+            text: "$timeCount",
             color: AppColor.warning,
             textAlign: TextAlign.center,
           ),
